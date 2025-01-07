@@ -1,6 +1,10 @@
 import java.util.Scanner;
 import java.util.Random;
-public class cricket_game{
+public class HandCricket {
+
+    static void out(){
+        System.out.println("You have entered Number that is greater than 10 . 'so you are out'");
+    }
     public static void main(String[]args){
         Scanner sc=new Scanner(System.in);
         Random rm = new Random();
@@ -59,22 +63,24 @@ public class cricket_game{
                 System.out.println(" you choose to bat");
                 System.out.println(" round start");
 
-                System.out.println("Enter Num from 1 to 10 : ");
-                int userPick=sc.nextInt();
-                System.out.println("computer's choice  from 1 to 10 : ");
-                int compPick=rm.nextInt(11);
-                System.out.println(compPick);
-                userScore+=userPick;
+                int userPick = 0;
+                int compPick = 1;
+
                 for(int round=0;userPick!=compPick;round++){
                     System.out.println("Enter Num from 1 to 10 : ");
                     userPick=sc.nextInt();
                     System.out.println("computer's choice  from 1 to 10 : ");
                     compPick=rm.nextInt(11);
                     System.out.println(compPick);
-                    userScore1+=userPick;
-                    finalScore1=userScore1+userScore;
-                        System.out.println("Your Total Score is: "+finalScore1);
 
+                    if (userPick > 10 || userPick < 0 ) {
+                    System.out.println("You have entered number that greater than 10 . so it won't be added ");
+                    }else{
+                        userScore1+=userPick;
+                        finalScore1=userScore1+userScore;
+                        System.out.println("Your Total Score is: "+finalScore1);
+                    }
+                    
                     if (userPick==compPick) {
                         System.out.println("______________Your choice is equal to computer's choice so You are Out_____________");
                         System.out.println("_______________Computer's turn to bat___________");
@@ -110,26 +116,26 @@ public class cricket_game{
                                         
                                     }
                                 }
-                            
                            
                         }
                         
                     }
+                    
                 }
+               
 // USER STARTS BALLING
 
             }else if(choice==1){
                 
                 System.out.println(" you choose to ball");
-                System.out.println("enter a number between 0 to 10");
-                int userPick=sc.nextInt();
-                System.out.println("computer's choice  from 1 to 10 : ");
-                int compPick=rm.nextInt(11);
-                System.out.println(compPick);
-                compScore+=compPick;
+                int userPick = 0;
+                int compPick = 1;
                 for(int round=0;userPick!=compPick;round++){
                     System.out.println("Enter Num from 1 to 10 : ");
                     userPick=sc.nextInt();
+                    if(userPick > 10 || userPick < 0){
+                        System.out.println("You have entered number that greater than 10 . so it won't be included .  ");
+                    }
                     System.out.println("computer's choice  from 1 to 10 : ");
                     compPick=rm.nextInt(11);
                     System.out.println(compPick);
@@ -145,16 +151,27 @@ public class cricket_game{
                         System.out.println("computer's choice  from 1 to 10 : ");
                         compPick=rm.nextInt(11);
                         System.out.println(compPick);
-                        userScore+=userPick;
+                        if(userPick > 10 || userPick < 0){
+                            System.out.println("You have entered number that greater than 10 . so it won't be added ");
+                        }else{
+                            userScore+=userPick;
+                        }
+                        
                         for( round=0;userPick!=compPick;round++){
                             System.out.println("Enter Num from 1 to 10 : ");
                             userPick=sc.nextInt();
                             System.out.println("computer's choice  from 1 to 10 : ");
                             compPick=rm.nextInt(11);
                             System.out.println(compPick);
-                            userScore1+=userPick;
-                            finalScore1=userScore1+userScore;
-                                System.out.println("Your Total Score is: "+finalScore1);
+
+                            if (userPick > 10 || userPick < 0 ) {
+                                System.out.println("You have entered number that greater than 10 . so it won't be added ");
+                                }else{
+                                    userScore1+=userPick;
+                                    finalScore1=userScore1+userScore;
+                                        System.out.println("Your Total Score is: "+finalScore1);
+                                }
+
                                 if(compPick==userPick){
                                     System.out.println("Computers choice matched the user's choice . so Computer is out");
                                     System.out.println("\n\nComputer's Score :"+finalScore);
@@ -183,17 +200,13 @@ public class cricket_game{
             if(choice==0){
                 System.out.println("________________ computer choose to bat________________");
                 
-                System.out.println("Enter Num from 1 to 10 : ");
-                int userPick=sc.nextInt();
-                System.out.println("computer's choice  from 1 to 10 : ");
-                int compPick=rm.nextInt(11);
-                System.out.println(compPick);
-               
-                compScore+=compPick;
+                int userPick = 0;
+                int compPick =1;
                 for(int round=0;userPick!=compPick;round++){
                     
                     System.out.println("Enter Num from 1 to 10 : ");
                     userPick=sc.nextInt();
+                    userPick = Math.min(userPick,11);
                     System.out.println("computer's choice  from 1 to 10 : ");
                     compPick=rm.nextInt(11);
                     System.out.println(compPick);
@@ -211,16 +224,28 @@ public class cricket_game{
                     System.out.println("computer's choice  from 1 to 10 : ");
                     compPick=rm.nextInt(11);
                     System.out.println(compPick);
-                    userScore+=userPick;
+                    if(userPick > 10 || userPick < 0){
+                        System.out.println("You have entered number that greater than 10 . so it won't be included .  ");
+                    }else{
+                        userScore+=userPick;
+                    }
+                    
                     for( round=0;userPick!=compPick;round++){
                         System.out.println("Enter Num from 1 to 10 : ");
                         userPick=sc.nextInt();
                         System.out.println("computer's choice  from 1 to 10 : ");
                         compPick=rm.nextInt(11);
                         System.out.println(compPick);
-                        userScore1+=userPick;
-                        finalScore1=userScore1+userScore;
-                            System.out.println("Your Total Score is: "+finalScore1);
+
+                        if (userPick > 10 || userPick < 0 ) {
+                            System.out.println("You have entered number that greater than 10 . so it won't be added ");
+                            }else{
+                                userScore1+=userPick;
+                                finalScore1=userScore1+userScore;
+                                System.out.println("Your Total Score is: "+finalScore1);
+                            }
+
+                        
                             if(compPick==userPick){
                                 System.out.println("Computers choice matched the user's choice . so Computer is out");
                                 System.out.println("\n\nComputer's Score :"+finalScore);
@@ -245,21 +270,26 @@ public class cricket_game{
                 System.out.println(" _____Your Turn to  bat_____");
                 System.out.println(" round start");
 
-                System.out.println("Enter Num from 1 to 10 : ");
-                int userPick=sc.nextInt();
-                System.out.println("computer's choice  from 1 to 10 : ");
-                int compPick=rm.nextInt(11);
-                System.out.println(compPick);
-                userScore+=userPick;
+                int userPick = 0;
+                int compPick = 1;
+
+                
                 for(int round=0;userPick!=compPick;round++){
                     System.out.println("Enter Num from 1 to 10 : ");
                     userPick=sc.nextInt();
                     System.out.println("computer's choice  from 1 to 10 : ");
                     compPick=rm.nextInt(11);
                     System.out.println(compPick);
-                    userScore1+=userPick;
-                    finalScore1=userScore1+userScore;
-                        System.out.println("Your Total Score is: "+finalScore1);
+
+                    if (userPick > 10 || userPick < 0 ) {
+                        System.out.println("You have entered number that greater than 10 . so it won't be added ");
+                        }else{
+                            userScore1+=userPick;
+                            finalScore1=userScore1+userScore;
+                            System.out.println("Your Total Score is: "+finalScore1);
+                        }
+
+                    
 
                     if (userPick==compPick) {
                         System.out.println("______________Your choice is equal to computer's choice so You are Out_____________");
@@ -267,6 +297,10 @@ public class cricket_game{
 
                         System.out.println("Enter Num from 1 to 10 : ");
                         userPick=sc.nextInt();
+                        if (userPick > 10 || userPick < 0 ) {
+                            System.out.println("You have entered number that greater than 10 . so it won't be included .  ");
+                            
+                        }
                         System.out.println("computer's choice  from 1 to 10 : ");
                         compPick=rm.nextInt(11);
                         System.out.println(compPick);
@@ -276,6 +310,9 @@ public class cricket_game{
                             
                             System.out.println("Enter Num from 1 to 10 : ");
                             userPick=sc.nextInt();
+                            if (userPick > 10 || userPick < 0 ) {
+                                System.out.println("You have entered number that greater than 10 . so it won't be included .  ");
+                            }    
                             System.out.println("computer's choice  from 1 to 10 : ");
                             compPick=rm.nextInt(11);
                             System.out.println(compPick);
@@ -318,4 +355,3 @@ public class cricket_game{
   while(z==1);
 }
 }
-
